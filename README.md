@@ -1,4 +1,4 @@
-# ![UNINEWS](https://imgur.com/a/f5mOm6V)
+# ![UNINEWS](https://i.imgur.com/wCSMpLc.png)
 ## Site de notícias da Univille
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
