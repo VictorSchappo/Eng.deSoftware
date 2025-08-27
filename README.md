@@ -1,4 +1,4 @@
-# ![UNINEWS](https://i.imgur.com/wCSMpLc.png)
+# ![UNINEWS](file:///C:/Users/AZURELOG_TI/Downloads/1756311881321-_1_.ico)
 ## Site de notícias da Univille
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
