@@ -1,25 +1,27 @@
-const WebSocket = require('ws');
+// Nesse ponto nos importamos as bibliotecas para a aplicação
+import express from "express";
+import dotenv from "dotenv";
+import { createClient } from "@supabase/supabase-js";
 
-const wss = new WebSocket.Server({ port: 8080 });
+// Configurações da aplicação
 
-console.log('💬 Servidor WebSocket rodando na porta 8080...');
+// Ele consegue capturar as variaveis de ambiente do arquivo .env
+dotenv.config();
 
-wss.on('connection', function (ws) {
-  console.log('🟢 Novo usuário conectado.');
+// Configuração do express
+const app = express();
+// Configuração da representação do tipo de arquivo que o servidor vai receber
+app.use(express.json());
 
-  ws.on('message', function (data) {
-    const message = data.toString();
-    console.log('📨 Mensagem recebida:', message);
+// Configurar a conexão com o banco de dados
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
-    // Reenvia a mensagem para todos os clientes conectados
-    wss.clients.forEach(function (client) {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(message);
-      }
-    });
-  });
+// Iremos Criar, Puxar e Apagar pessoas no banco de dados
+app.post("/pessoa", (req, res) => {
+    
+});
 
-  ws.on('close', () => {
-    console.log('🔴 Cliente desconectado.');
-  });
+// Porta padrão é 3000
+app.listen(3000, () => {
+    console.log("O servidor subiu na porta 3000!");
 });
